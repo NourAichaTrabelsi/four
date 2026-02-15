@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebRTC Video Call</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Video Call</h1>
+      <p class="subtitle">One-to-one WebRTC with WebSocket signaling</p>
+    </header>
+
+    <section class="join-section" id="joinSection">
+      <div class="room-input-group">
+        <input
+          type="text"
+          id="roomInput"
+          placeholder="Enter room name"
+          autocomplete="off"
+          maxlength="64"
+        />
+        <button type="button" id="joinBtn" class="btn btn-primary">Join room</button>
+      </div>
+      <p class="hint">Share the room name with the person you want to call. Only they will see and hear you.</p>
+      <p id="joinError" class="error" aria-live="polite"></p>
+    </section>
+
+    <section class="call-section hidden" id="callSection">
+      <div class="videos">
+        <div class="video-card local">
+          <video id="localVideo" autoplay playsinline muted></video>
+          <span class="label">You</span>
+        </div>
+        <div class="video-card remote">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <span class="label" id="remoteLabel">Remote</span>
+        </div>
+      </div>
+      <div class="call-bar">
+        <span class="room-badge" id="roomBadge"></span>
+        <button type="button" id="leaveBtn" class="btn btn-danger">Leave</button>
+      </div>
+      <p id="callStatus" class="status" aria-live="polite">Connecting…</p>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "webrtc-video-call",
+  "version": "1.0.0",
+  "description": "Real-time one-to-one video calling with WebRTC and WebSocket signaling",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
